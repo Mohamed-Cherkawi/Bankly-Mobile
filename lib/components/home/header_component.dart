@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../../util/app_color.dart';
+
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: Color(0xFF085EAF),
-        boxShadow: [
+      decoration:  BoxDecoration(
+        color: AppColor.darkBlue,
+        boxShadow:  [
           BoxShadow(
-            color: Color(0xFF085EAF),
+            color: AppColor.darkBlue,
             blurRadius: 10,
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20),
             bottomRight: Radius.circular(60)
         ),
@@ -39,24 +41,25 @@ class HomeHeader extends StatelessWidget {
                   Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                      const Icon(
+                  children: const [
+                      Icon(
                           Icons.wallet,
                           color: Colors.white,
                         size: 50,
                       ),
-                      Image.asset(
-                        'images/user-icon.png',
-                        width: 45,
-                        height: 45,
-                      ),
+                    Icon(
+                      Icons.person_2_rounded,
+                      color: Colors.white,
+                      size: 50,
+                    )
                   ],
                 ),
                   const Text(
                     'Hello, Mohamed Cherkaoui !',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 15
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold
                     ),
                   )
               ],
