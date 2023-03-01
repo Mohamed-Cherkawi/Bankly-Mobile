@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'home_widget.dart';
+import 'pages/home_widget.dart';
 
 void main(){
   runApp(MyApp());
@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Roboto',
         primaryColor: Colors.blueAccent,
         scaffoldBackgroundColor: const Color(0xFFFAFAFA),
       ),
