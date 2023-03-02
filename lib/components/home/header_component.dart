@@ -9,7 +9,15 @@ class HomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration:  BoxDecoration(
-        color: AppColor.darkBlue,
+        gradient: LinearGradient(
+            colors: [
+                AppColor.marinerBlue,
+                AppColor.darkBlue
+            ],
+          stops: const [0.1 , 1],
+          begin: AlignmentDirectional.topStart,
+          end: Alignment.bottomRight
+        ),
         boxShadow:  [
           BoxShadow(
             color: AppColor.darkBlue,
@@ -17,7 +25,6 @@ class HomeHeader extends StatelessWidget {
           )
         ],
         borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
             bottomRight: Radius.circular(60)
         ),
       ),
@@ -25,7 +32,6 @@ class HomeHeader extends StatelessWidget {
       height: 320,
       child:  Padding(
         padding: const EdgeInsets.symmetric(
-            vertical: 5,
             horizontal: 20
         ),
         child: Column(
@@ -45,22 +51,34 @@ class HomeHeader extends StatelessWidget {
                       Icon(
                           Icons.wallet,
                           color: Colors.white,
-                        size: 50,
+                        size: 40,
                       ),
                     Icon(
                       Icons.person_2_rounded,
                       color: Colors.white,
-                      size: 50,
+                      size: 40,
                     )
                   ],
                 ),
-                  const Text(
-                    'Hello, Mohamed Cherkaoui !',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold
-                    ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: const [
+                      Text(
+                        'Hello , ',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                        ),
+                      ),
+                      Text(
+                        'Mohamed Cherkaoui !',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold
+                        ),
+                      )
+                    ],
                   )
               ],
               ),
