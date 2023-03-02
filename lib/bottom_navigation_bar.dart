@@ -1,3 +1,4 @@
+import 'package:bankly/util/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -6,14 +7,14 @@ class NavigationAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GNav(
-      backgroundColor: Colors.black,
-      color: Colors.white,
-      tabBackgroundColor: Colors.white,
-      padding: EdgeInsets.all(15),
+    return  GNav(
+      color: Colors.black,
+      padding: const EdgeInsets.all(20),
+      tabBorderRadius: 2,
       selectedIndex: 0,
       gap: 8,
-      tabs: [
+      activeColor: AppColor.darkBlue,
+      tabs: const [
         GButton(
           icon: Icons.home,
           text: 'Home',
