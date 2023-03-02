@@ -59,7 +59,7 @@ class OperationsWidget extends StatelessWidget {
                   boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      blurRadius: 5,
+                      blurRadius: 1,
                       offset: Offset(0, 2)
                     )
                   ],
