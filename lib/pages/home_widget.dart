@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:bankly/components/home/activity_component.dart';
 import '../components/home/header_component.dart';
 import '../components/home/operations_component.dart';
 
@@ -10,9 +11,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       body: ListView(
-        children:  const [
-          HomeHeader(),
-          OperationsWidget(),
+        children:   [
+          const HomeHeader(),
+          const OperationsWidget(),
+          ActivityWidget(),
       ]
       ),
     );
