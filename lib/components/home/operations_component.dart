@@ -24,7 +24,15 @@ class OperationsWidget extends StatelessWidget {
                         offset: const Offset(0, 2)
                     )
                   ],
-                  color: AppColor.darkBlue,
+                  gradient: LinearGradient(
+                      colors: [
+                        AppColor.marinerBlue,
+                        AppColor.darkBlue
+                      ],
+                      stops: const [0.1 , 1],
+                      begin: AlignmentDirectional.topStart,
+                      end: Alignment.bottomRight
+                  ),
                   borderRadius: BorderRadius.circular(20)
               ),
               width: 120,
@@ -58,8 +66,8 @@ class OperationsWidget extends StatelessWidget {
               decoration: BoxDecoration(
                   boxShadow: const [
                     BoxShadow(
-                      color: Colors.black,
-                      blurRadius: 1,
+                      color: Colors.grey,
+                      blurRadius: 5,
                       offset: Offset(0, 2)
                     )
                   ],
