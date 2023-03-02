@@ -8,6 +8,9 @@ class ActivityWidget extends StatelessWidget {
     HomeActivityUtil('Ossama Souyari', 'yesterday', 138.50, OperationType.sent),
     HomeActivityUtil('Mohamed Maitite', '1 week ago', 531.00, OperationType.received),
     HomeActivityUtil('Salima Foulad', '10 week ago', 31.00, OperationType.received),
+    HomeActivityUtil('Firdaouss Cherkaoui', '1 year ago', 10.00, OperationType.sent),
+    HomeActivityUtil('Firdaouss Cherkaoui', '1 year ago', 10.00, OperationType.sent),
+    HomeActivityUtil('Firdaouss Cherkaoui', '1 year ago', 10.00, OperationType.sent),
     HomeActivityUtil('Firdaouss Cherkaoui', '1 year ago', 10.00, OperationType.sent)
   ];
 
@@ -45,7 +48,7 @@ class ActivityWidget extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 10),
             decoration:  BoxDecoration(
               color: Colors.white,
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(15),
                 boxShadow: const [
                   BoxShadow(
                     color: Colors.grey,
@@ -78,7 +81,12 @@ class ActivityWidget extends StatelessWidget {
                             activity.accountHolderName,
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          Text(activity.date)
+                          Text(
+                              activity.date,
+                              style: const TextStyle(
+                                fontSize: 10
+                              ),
+                          )
                         ],
                       ),
                     ),
