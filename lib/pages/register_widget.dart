@@ -1,4 +1,3 @@
-import 'package:bankly/bottom_navigation_bar.dart';
 import 'package:bankly/components/app_text_field_component.dart';
 import 'package:bankly/util/app_color.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,7 @@ class RegisterWidget extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColor.scaffoldBackColor,
         elevation: 0,
-        toolbarHeight: 150,
+        toolbarHeight: 100,
         title:  Text(
           'Register',
           style: TextStyle(
@@ -33,26 +32,75 @@ class RegisterWidget extends StatelessWidget {
         ),
       ),
       body: SizedBox(
-          width: 300,
-          height: 600,
+          width: double.infinity,
+          height: double.infinity,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                  Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                          Form(
-                              child: AppTextField(
-                                inputTextHint: 'Enter your full name',
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 40),
+                      height: 350,
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                              AppTextField(
+                                    inputTextHint: 'Enter your full name',
+                                  ),
+                              AppTextField(
+                                inputTextHint: 'E-mail address',
                               ),
-                          )
-                      ],
-                  ),
-                  ElevatedButton(onPressed: (){}, child: Container())
-              ],
+                            AppTextField(
+                              inputTextHint: 'Password',
+                            ),
+                            AppTextField(
+                              inputTextHint: 'Confirm password',
+                            ),
+                          ],
+                      ),
+                    ),
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(35),
+                        boxShadow: [
+                          BoxShadow(
+                          color: AppColor.darkBlue,
+                          blurRadius: 4
+                          ),
+                        ],
+                        gradient: LinearGradient(
+                            colors: [
+                              AppColor.marinerBlue,
+                              AppColor.darkBlue,
+                            ],
+                            stops: const [0.1 , 1],
+                            //begin: AlignmentDirectional.topStart,
+                            //end: Alignment.bottomRight
+                        ),
+                      ),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(350, 75),
+                          backgroundColor: Colors.transparent,
+                          disabledBackgroundColor: Colors.transparent,
+                          shadowColor: Colors.transparent
+                        ),
+                        onPressed: () { print('object'); },
+                        child: const Text(
+                        'Register',
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ),
+                    )
+
+                ],
+              ),
             ),
           ),
       ),
