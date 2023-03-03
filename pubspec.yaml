@@ -83,5 +83,10 @@ flutter:
         - asset: fonts/RobotoMono-Light.ttf
           style: italic
 
+    - family: Rubik
+      fonts:
+        - asset: fonts/Rubik-Medium.ttf
+          style: normal
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
