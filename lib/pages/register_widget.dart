@@ -1,4 +1,5 @@
 import 'package:bankly/components/app_text_field_component.dart';
+import 'package:bankly/components/authentication_button_component.dart';
 import 'package:bankly/util/app_color.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,9 @@ class RegisterWidget extends StatelessWidget {
                 color: AppColor.valhala,
             ),
           ),
-          onPressed: () {  },
+          onPressed: () {
+              Navigator.pushNamed(context, '/');
+          },
         ),
       ),
       body: SizedBox(
@@ -62,43 +65,7 @@ class RegisterWidget extends StatelessWidget {
                           ],
                       ),
                     ),
-                    DecoratedBox(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(35),
-                        boxShadow: [
-                          BoxShadow(
-                          color: AppColor.darkBlue,
-                          blurRadius: 4
-                          ),
-                        ],
-                        gradient: LinearGradient(
-                            colors: [
-                              AppColor.marinerBlue,
-                              AppColor.darkBlue,
-                            ],
-                            stops: const [0.1 , 1],
-                            //begin: AlignmentDirectional.topStart,
-                            //end: Alignment.bottomRight
-                        ),
-                      ),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(350, 75),
-                          backgroundColor: Colors.transparent,
-                          disabledBackgroundColor: Colors.transparent,
-                          shadowColor: Colors.transparent
-                        ),
-                        onPressed: () { print('object'); },
-                        child: const Text(
-                        'Register',
-                        style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold
-                        ),
-                      ),
-                    ),
-                    )
-
+                    const AuthButtonWidget('Register','home')
                 ],
               ),
             ),
