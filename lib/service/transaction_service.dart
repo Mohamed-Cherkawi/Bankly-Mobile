@@ -11,7 +11,7 @@ class TransactionService {
   static Future<List<Transaction>> fetchTransactions(http.Client client) async {
     final response = await client
         .get(
-      Uri.parse('http://localhost:9010/transaction/api/v1/fetching/all'),
+      Uri.parse('http://172.16.11.196:9010/transaction/api/v1/fetching/all'),
       headers: {
         HttpHeaders.authorizationHeader: 'Bearer $token',
       },
