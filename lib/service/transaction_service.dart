@@ -8,8 +8,8 @@ import 'package:bankly/model/transaction_maper.dart';
 class TransactionService {
   static final String token = 'eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ0xJRU5UIiwic3ViIjoiU2ltb3giLCJpYXQiOjE2NzgwMjM1MDAsImV4cCI6MTY3ODEwOTkwMH0.rhOzRNdSfu_fmStsAr_ZPE1dD46zyzvTKwfW3iOTnsg';
 
-  static Future<List<Transaction>> fetchTransactions(http.Client client) async {
-    final response = await client
+  static Future<List<Transaction>> fetchTransactions() async {
+    final response = await http
         .get(
       Uri.parse('http://172.16.11.196:9010/transaction/api/v1/fetching/all'),
       headers: {

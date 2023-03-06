@@ -2,10 +2,10 @@ import 'package:bankly/service/transaction_service.dart';
 import 'package:bankly/util/TransactionsList.dart';
 import 'package:bankly/model/transaction_maper.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 
 class ActivityWidget extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +33,7 @@ class ActivityWidget extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           FutureBuilder<List<Transaction>>(
-            future: TransactionService.fetchTransactions(http.Client()),
+            future: TransactionService.fetchTransactions(),
             builder: (context,snapshot){
               if (snapshot.hasData) {
                 return TransactionsList(transactions: snapshot.data!);
